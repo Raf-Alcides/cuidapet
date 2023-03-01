@@ -1,7 +1,8 @@
 
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'home_page.dart';
+import 'modules/auth/auth_module.dart';
+
 
 class AppModule extends Module{
   @override
@@ -9,6 +10,6 @@ class AppModule extends Module{
 
   @override
   List<ModularRoute> get routes => [
-     ChildRoute('/', child: (_, __) => const HomePage()),
+     ModuleRoute('/auth', module: AuthModule())
   ];
 }
