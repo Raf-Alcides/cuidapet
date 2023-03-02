@@ -1,4 +1,6 @@
+// ignore: depend_on_referenced_packages
 import 'package:asuka/asuka.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -8,23 +10,21 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     Modular.setObservers([Asuka.asukaHeroController]);
+    Modular.setInitialRoute('/auth');
 
     return ScreenUtilInit(
-      designSize: const Size(390, 844),
-      builder: (_ , __) {
-        return MaterialApp.router(
-        title: 'Cuidapet',
-        builder: (context, child) {
-          return Asuka.builder(context, child);
-        },
-        theme: ThemeData(primarySwatch: Colors.blue),
-        routeInformationParser: Modular.routeInformationParser,
-        routerDelegate: Modular.routerDelegate,
-      );
-      }
-      
-    );
+        designSize: const Size(390, 844),
+        builder: (_, __) {
+          return MaterialApp.router(
+            title: 'Cuidapet',
+            builder: (context, child) {
+              return Asuka.builder(context, child);
+            },
+            theme: ThemeData(primarySwatch: Colors.blue),
+            routeInformationParser: Modular.routeInformationParser,
+            routerDelegate: Modular.routerDelegate,
+          );
+        });
   }
 }
