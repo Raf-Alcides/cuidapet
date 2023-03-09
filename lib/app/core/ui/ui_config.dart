@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class UiConfig {
   UiConfig._();
-  static String get title => 'Cuida pet';
+  static String get title => 'Cuidapet';
 
   static ThemeData get theme => ThemeData(
         primaryColor: const Color(0xffA8CE4B),
